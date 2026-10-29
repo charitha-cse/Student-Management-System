@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Registration Form</h1>
+        <p>Enter student details below</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="registration.html">Registration</a>
+    </nav>
+
+    <main>
+        <div class="card">
+            <form id="studentForm">
+                <label for="name">Student Name</label>
+                <input id="name" type="text" required>
+
+                <br><br>
+
+                <label for="roll">Roll Number</label>
+                <input id="roll" type="text" required>
+
+                <br><br>
+
+                <label for="department">Department</label>
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <option>CSE</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>IT</option>
+                </select>
+
+                <br><br>
+
+                <label for="email">Email</label>
+                <input id="email" type="email" required>
+
+                <br><br>
+
+                <button type="submit">Register Student</button>
+            </form>
+
+            <p id="message"></p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("studentForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                document.getElementById("message").textContent =
+                    "Registration successful for " + name + "!";
+
+                this.reset();
+            });
+    </script>
+</body>
+</html>
